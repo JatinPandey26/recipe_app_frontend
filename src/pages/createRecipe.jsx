@@ -39,7 +39,7 @@ export const CreateRecipe = () => {
     e.preventDefault();
     setformdata({ ...formdata, createdBy: userID })
     try {
-      await axios.post('http://localhost:3001/recipes/create-recipe', {
+      await axios.post('https://recipeapp-backend.vercel.app/recipes/create-recipe', {
         name: formdata.name,
         ingredients: formdata.ingredients,
         instructions: formdata.instructions,

@@ -13,7 +13,7 @@ const Dashboard = () => {
         async function fetchUser() {
 
             try {
-                const { data: users } = await axios.post('http://localhost:3001/admin/get-all-users', { userID }, { headers: { 'Authorization': cookies.access_token } })
+                const { data: users } = await axios.post('https://recipeapp-backend.vercel.app/admin/get-all-users', { userID }, { headers: { 'Authorization': cookies.access_token } })
 
                 setUsers(users)
 

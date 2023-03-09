@@ -10,7 +10,7 @@ const SavedRecipe = ({ recipe: { name, ingredients, instructions, image, cooking
         e.preventDefault();
 
         try {
-            await axios.post(`http://localhost:3001/recipes/remove-saved-recipe`, { userID, recipeID: _id }, { headers: { authorization: cookie.access_token } });
+            await axios.post(`https://recipeapp-backend.vercel.app/recipes/remove-saved-recipe`, { userID, recipeID: _id }, { headers: { authorization: cookie.access_token } });
             alert("Recipe removed from saved recipes");
         } catch (error) {
             console.error(error)

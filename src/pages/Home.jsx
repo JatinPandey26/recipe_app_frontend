@@ -13,14 +13,14 @@ const Home = () => {
 
   useEffect(() => {
     async function fetchRecipes() {
-      const recipes = await axios.get('http://localhost:3001/recipes');
+      const recipes = await axios.get('https://recipeapp-backend.vercel.app/recipes');
       setrecipes(recipes.data);
     }
     fetchRecipes();
 
     async function fetchRecipesIds() {
 
-      const { data: { savedRecipes } } = await axios.post('http://localhost:3001/recipes/savedRecipes/ids', { userID: userID }, { headers: { authorization: cookie.access_token } });
+      const { data: { savedRecipes } } = await axios.post('https://recipeapp-backend.vercel.app/recipes/savedRecipes/ids', { userID: userID }, { headers: { authorization: cookie.access_token } });
       setrecipesIds(savedRecipes);
     }
     fetchRecipesIds();

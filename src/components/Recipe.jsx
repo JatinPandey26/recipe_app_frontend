@@ -19,7 +19,7 @@ const Recipe = ({ recipe: { name, ingredients, instructions, image, cookingTime,
         try {
             const userID = localStorage.getItem('userID');
 
-            await axios.put("http://localhost:3001/recipes/save-recipe", { userID: userID, recipeID: _id }, { headers: { authorization: cookie.access_token } })
+            await axios.put("https://recipeapp-backend.vercel.app/recipes/save-recipe", { userID: userID, recipeID: _id }, { headers: { authorization: cookie.access_token } })
 
             setIsSaved(true)
             alert('Recipe saved!');

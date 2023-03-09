@@ -25,7 +25,7 @@ const Login = ({ setShowRegister }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:3001/auth/login', { email: formdata.email, password: formdata.password });
+      const response = await axios.post('https://recipeapp-backend.vercel.app/auth/login', { email: formdata.email, password: formdata.password });
 
       setCookies("access_token", response.data.token);
       window.localStorage.setItem("userID", response.data.userID);
@@ -63,7 +63,7 @@ const Register = ({ setShowRegister }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:3001/auth/register', { email: formdata.email, username: formdata.username, password: formdata.password});
+      const response = await axios.post('https://recipeapp-backend.vercel.app/auth/register', { email: formdata.email, username: formdata.username, password: formdata.password });
 
       setCookies("access_token", response.data.token);
       window.localStorage.setItem("userID", response.data.userID);

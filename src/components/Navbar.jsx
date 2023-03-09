@@ -15,7 +15,7 @@ const Navbar = () => {
     useEffect(() => {
         async function fetchUser() {
 
-            const { data: user } = await axios.post('http://localhost:3001/auth/me', { userID }, {
+            const { data: user } = await axios.post('https://recipeapp-backend.vercel.app/auth/me', { userID }, {
                 headers: {
                     Authorization:
                         cookies.access_token
